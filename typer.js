@@ -29,6 +29,13 @@ Typer.prototype.doTyping = function() {
   var c = p.char;
   var currentChar = this.words[w][c];
   p.atWordEnd = false;
+  if (this.cursor) {
+    this.cursor.element.style.opacity = "1";
+    this.cursor.on = true;
+    clearInterval(this.cursor.interval);
+    var itself = this.cursor;
+    this.cursor.interval = setInterval(function() {itself.updateBlinkState();}, 400);
+  }
   if (p.building) {
     e.innerHTML += currentChar;
     p.char += 1;
@@ -64,4 +71,34 @@ elements = document.getElementsByClassName("typer-start");
 for (var i = 0, e; e = elements[i++];) {
   var owner = typers[e.dataset.owner];
   e.onclick = function(){owner.start();};
+}
+
+
+var Cursor = function(element) {
+  this.element = element;
+  this.cursorDisplay = element.dataset.cursorDisplay || "_";
+  this.owner = typers[element.dataset.owner] || "";
+  element.innerHTML = this.cursorDisplay;
+  this.on = true;
+  element.style.transition = "all 0.1s";
+  var myself = this;
+  this.interval = setInterval(function() {
+    myself.updateBlinkState();
+  }, 400);
+}
+Cursor.prototype.updateBlinkState = function() {
+  if (this.on) {
+    this.element.style.opacity = "0";
+    this.on = false;
+  } else {
+    this.element.style.opacity = "1";
+    this.on = true;
+  }
+}
+
+elements2 = document.getElementsByClassName("cursor");
+for (var i = 0, e; e = elements2[i++];) {
+  var t = new Cursor(e);
+  t.owner.cursor = t;
+  console.log(t.owner.cursor);
 }
