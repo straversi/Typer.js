@@ -2,7 +2,7 @@ var Typer = function(element) {
   console.log("constructor called");
   this.element = element;
   var delim = element.dataset.delim || ","; // default to comma
-  var words = element.dataset.words || "sample typing";
+  var words = element.dataset.words || "override these,sample typing";
   this.words = words.split(delim).filter(function(v){return v;}); // non empty words
   this.delay = element.dataset.delay || 200;
   this.deleteDelay = element.dataset.deleteDelay || 800;

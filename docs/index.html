@@ -10,24 +10,28 @@
     header { color:white; background-color:rgb(49, 149, 154); padding:10px; }
     body { font-size:17px; line-height:20px; margin:0; font-family:'Lato',Helvetica,Arial,sans-serif; color:#252525; }
     h1,h2,h3,h4,th { font-family:'PT Sans'; }
-    a { text-decoration:none; color:inherit; }
-    button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; color:white; padding:5px; font-size:1.1em; font-weight:bold; margin:2px; vertical-align:bottom; }
-    button:hover:active { border-bottom-width:0; margin-top:5px; }
-    button:hover { border-bottom-width:2px; margin-top:3px; cursor:pointer; }
+    h1 a { text-decoration:none; }
+    a { color:inherit; }
+    button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; color:white; padding:5px; height:30px; font-weight:bold; margin:0px; vertical-align:top; }
+    button:hover:active { border-bottom-width:0; margin-top:3px; height:27px;}
+    button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:29px;}
     .content { padding:10px; }
-    code { font-weight:normal; font-family:'Bitter','Consolas','Menlo'; } /* #218C90 */
+    code, pre { font-weight:normal; font-family:'Bitter','Consolas','Menlo'; } /* #218C90 */
     code.attn { color:rgb(215, 23, 13); }
     code.note { color:rgb(215, 150, 13); }
+    code.inset, pre { background-color:#EEEEEE; border-radius:1px; padding:2px; font-size:.9em; color:rgb(163, 77, 3); }
     table { border-spacing:0px 3px; font-size:.9em; line-height:1.8em; max-width:800px; }
     td { vertical-align:top; padding:6px; /* border-top: 1px solid rgb(80, 102, 103);*/ }
     td:nth-of-type(1) { background-color:rgb(219, 242, 243); }
     td:nth-of-type(2) { background-color:rgb(243, 252, 252); }
     tr { border-top: 2px solid rgb(80, 102, 103); }
     th { text-align:left; font-weight:normal; }
-    pre { margin: 3px; }
+    pre { padding:5px; color:#252525; display:inline-block; margin:0 0 0 10px; max-width:500px; overflow:scroll; }
+    .tabbed { padding-left:10px; }
     footer { color:white; padding:10px; }
     footer:nth-of-type(1) { background-color:rgb(7, 115, 120); }
     footer:nth-of-type(2) { background-color:rgb(1, 91, 95); text-align:center; line-height:0; }
+    footer ul { list-style-type:none; padding-left:10px; }
   </style>
 </head>
 <body>
@@ -37,59 +41,61 @@
   </header>
   <div class="content">
   <a href="../typer.js" target="_blank" download><button>Get Typer.js</button></a>
-  <a class="github-button" href="https://github.com/straversi/Typer.js" data-style="mega"
-  data-count-href="/straversi/Typer.js/stargazers"
-  data-count-api="/repos/straversi/Typer.js#stargazers_count"
-  data-count-aria-label="# stargazers on GitHub"
-  aria-label="Star straversi/Typer.js on GitHub">Star</a>
+  <iframe src="https://ghbtns.com/github-btn.html?user=straversi&repo=Typer.js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
   <h3>Getting Started</h3>
   <p>
-    Here's how to hit the ground running: it's very simple, as all of
-    Typer.js is packaged in one short javascript file.
+    Get ready to use Typer.js very simple; all of Typer.js is packaged in one
+    short javascript file.<br>
+    Place the following at the end of your html file, right before the body
+    tag closes. Be sure to change the filepath in <code class="inset">src</code>
+    to reflect your case.
   </p>
-  <h4>Adding a Cursor</h4>
-  <p>
-    To add a cursor, add a tag with the class "cursor" after your typer
-    class. The cursor is kept as a separate tag so that your typer and
-    cursor can be configured to your liking in a span, p, or even div.
-  </p>
+  <pre>&lt;script src='typer.js'&gt;&lt;/script&gt;</pre>
+  <p>That's it. Here's an example typer to get you started:</p>
+  <pre>&lt;p&gt;I enjoy &lt;span class="typer" data-delay="150" data-words="apples,oranges,blueberries" data-colors="red,orange,blue"&gt;&lt;/span&gt;&lt;/p&gt;</pre>
+  <p>Add the following after your typer span to create a cursor. Make sure to add
+  <code class="inset">id="first-typer"</code> to the typer as well, or else <thead>
+    cursor won't know who to listen to.</p>
+  <pre>&lt;span class="cursor" data-owner="first-typer"&gt;&lt;/span&gt;</pre>
   <h3>class <code>typer</code></h3>
+  <p class="tabbed">Defines a DOM element as a target for the typing effect.</p>
   <table>
     <th>Options</th>
     <tr>
       <td><code>data-words</code><br></td>
       <td>A comma-delimited list of words to be typed.<br>
-        <b>Default:</b> 'Sample typing'</td>
+        <b>Default:</b> <code class="inset">'override these,sample typing'</code></td>
     </tr>
     <tr>
       <td><code>data-delim</code></td>
-      <td>Specifies the delimter used in <code>data-words</code><br>
-        <b>Default:</b> ,</td>
+      <td>Specifies the delimiter used in <code>data-words</code><br>
+        <b>Default:</b> <code class="inset">,</code></td>
     </tr>
     <tr>
       <td><code>data-delay</code></td>
-      <td>The time delay between typed characters.<br>
-        <b>Default:</b> 200</td>
+      <td>The time delay (ms) between typed characters.<br>
+        <b>Default:</b> <code class="inset">200</code></td>
     </tr>
     <tr>
       <td><code>id</code> (<code class="note">potential dependency</code>)</td>
       <td>A unique identifier that can be used to set the owner property of
-      other objects. This must be set if a <code>cursor</code>,
-      <code>typer-start</code>, or <code>typer-stop</code> is used with this
-      typer.</td>
+      other objects. This must be set if a <code class="inset">cursor</code>,
+      <code class="inset">typer-start</code>, or <code class="inset">typer-stop</code>
+      is used with this typer.</td>
     </tr>
     <tr>
       <td><code>data-deleteDelay</code></td>
-      <td>The time delay before a completed word is de-typed.<br>
-        <b>Default:</b> 800</td>
+      <td>The time delay (ms) before a completed word is de-typed.<br>
+        <b>Default:</b> <code class="inset">800</code></td>
     </tr>
     <tr>
       <td><code>data-colors</code></td>
       <td>A comma-delimited list of colors to cycle through. One color per word.<br>
-        <b>Default:</b> black</td>
+        <b>Default:</b> <code class="inset">black</code></td>
     </tr>
   </table>
   <h3>class <code>cursor</code></h3>
+  <p class="tabbed">Converts a DOM element into a blinking cursor.</p>
   <table>
     <th>Options</th>
     <tr>
@@ -99,10 +105,11 @@
     <tr>
       <td><code>data-cursorDisplay</code></td>
       <td>The cursor representation.<br>
-        <b>Default:</b> _</td>
+        <b>Default:</b> <code class="inset">_</code></td>
     </tr>
   </table>
   <h3>class <code>typer-start</code></h3>
+  <p class="tabbed">Turns a DOM element into a button to start a given typer.</p>
   <table>
     <th>Options</th>
     <tr>
@@ -111,6 +118,7 @@
     </tr>
   </table>
   <h3>class <code>typer-stop</code></h3>
+  <p class="tabbed">Turns a DOM element into a button to stop a given typer.</p>
   <table>
     <th>Options</th>
     <tr>
@@ -120,17 +128,20 @@
   </table>
   </div>
   <footer>
-    Thank you for reading the documentation. Internal links here.
+    <ul>
+      <li><a href="../index.html">home</a></li>
+      <li><a href="">top</a></li>
+      <li><a href="../playground.html">example</a></li>
+    </ul>
   </footer>
   <footer>
     <img src="../assets/github.png" width="64" alt="github icon">
   </footer>
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>
 <script>
   var h3s = document.getElementsByTagName("h3")
   for (var i = 0, e; e = h3s[i++];) {
-    var id = e.innerHTML.replace(" ","-");
+    var id = e.textContent.replace(" ","-");
     e.id = id;
     var paraJump = "<a href='#" + id + "' style='text-decoration:none;font-size:.8em;display:none;color:black;vertical-align:bottom;'> &para;</a>";
     e.onmouseenter = function(){ this.querySelector("a").style.display = "inline";};
