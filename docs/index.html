@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typer.js Documentation</title>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <style>
+    header { color:white; background-color:rgb(49, 149, 154); padding:10px; }
+    body { font-size:17px; line-height:20px; margin:0; font-family:Helvetica,Arial,sans-serif; color:#252525; }
+    h1,h2,h3,h4,th { font-family:'PT Sans';}
+    .content { padding:10px; }
+    code { /*color:rgb(23, 140, 145);*/ font-weight:normal; font-family:'Consolas','Menlo'; } /* #218C90 */
+    code.attn { color:rgb(215, 23, 13); }
+    code.note { color:rgb(215, 150, 13); }
+    table { border-spacing:0px 2px; }
+    td { vertical-align:top; padding:4px; /* border-top: 1px solid rgb(80, 102, 103);*/ }
+    td:nth-of-type(1) { background-color:rgb(219, 242, 243); }
+    td:nth-of-type(2) { background-color:rgb(243, 252, 252); }
+    tr { border-top: 2px solid rgb(80, 102, 103); }
+    th { text-align:left; font-weight:normal; }
+    pre { margin: 3px; }
+    footer { color:white; padding:10px; }
+    footer:nth-of-type(1) { background-color:rgb(7, 115, 120); }
+    footer:nth-of-type(2) { background-color:rgb(1, 91, 95); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Typer.js</h1>
+    <h2>Documentation</h2>
+  </header>
+  <div class="content">
+  <h3>Getting Started</h3>
+  <p>
+    Here's how to hit the ground running: it's very simple, as all of
+    Typer.js is packaged in one short javascript file.
+  </p>
+  <h4>Adding a Cursor</h4>
+  <p>
+    To add a cursor, add a tag with the class "cursor" after your typer
+    class. The cursor is kept as a separate tag so that your typer and
+    cursor can be configured to your liking in a span, p, or even div.
+  </p>
+  <h3>class <code>typer</code></h3>
+  <table>
+    <th>Properties</th>
+    <tr>
+      <td><code>data-words</code><br></td>
+      <td>A comma-delimited list of words to be typed.<br>
+        Default: 'Sample typing'<br></td>
+    </tr>
+    <tr>
+      <td><code>data-delay</code></td>
+    </tr>
+    <tr>
+      <td><code>id</code> (<code class="note">potential dependency</code>)</td>
+    </tr>
+    <tr>
+      <td><code>data-delay</code></td>
+    </tr>
+    <tr>
+      <td><code>data-deleteDelay</code></td>
+    </tr>
+    <tr>
+      <td><code>data-colors</code></td>
+    </tr>
+  </table>
+  <h3>class <code>cursor</code></h3>
+  <table>
+    <tr>
+      <td><code>data-owner</code> (<code class="attn">required</code>)</td>
+      <td>TEJSKLFJDKLSJFKLDSFJKDLS</td>
+    </tr>
+    <tr>
+      <td><code>data-cursorDisplay</code></td>
+      <td>SLDKFJ SLDKFJ DLSKFJDLKS FJLK<br>Example:<pre>SDKLFJSDLKFJ</pre></td>
+    </tr>
+  </table>
+  <h3>class <code>typer-start</code></h3>
+  <table>
+    <tr>
+      <td><code>data-owner</code> (<code class="attn">required</code>)</td>
+    </tr>
+  </table>
+  <h3>class <code>typer-stop</code></h3>
+  <table>
+    <tr>
+      <td><code>data-owner</code> (<code class="attn">required</code>)</td>
+    </tr>
+  </table>
+  </div>
+  <footer>
+    Thank you for reading the documentation. Internal links here.
+  </footer>
+  <footer>
+    This article brought to you by etc. External links here.
+  </footer>
+</body>
+<script>
+  var h3s = document.getElementsByTagName("h3")
+  for (var i = 0, e; e = h3s[i++];) {
+    var id = e.innerHTML.replace(" ","-");
+    e.id = id;
+    var paraJump = "<a href='#" + id + "' style='text-decoration:none;font-size:.8em;display:none;color:black;vertical-atrgn:bottom;'> &para;</a>";
+    e.onmouseenter = function(){ this.querySelector("a").style.display = "intrne";};
+    e.onmouseleave = function(){ this.querySelector("a").style.display = "none";};
+    e.innerHTML = e.innerHTML + paraJump;
+  }
+</script>
+</html>

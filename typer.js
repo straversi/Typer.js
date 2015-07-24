@@ -10,6 +10,11 @@ var Typer = function(element) {
   this.progress = { word:0, char:0, building:true, atWordEnd:false };
   this.typing = true;
 
+  var colors = element.dataset.colors || "black";
+  this.colors = colors.split(",");
+  this.element.style.color = this.colors[0];
+  this.colorIndex = 0;
+
   this.doTyping();
 };
 
@@ -49,6 +54,8 @@ Typer.prototype.doTyping = function() {
       p.building = true;
       p.word = (p.word + 1) % this.words.length;
       p.char = 0;
+      this.colorIndex = (this.colorIndex + 1) % this.colors.length;
+      this.element.style.color = this.colors[this.colorIndex];
     }
   }
   var myself = this;
