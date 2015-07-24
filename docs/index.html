@@ -28,10 +28,11 @@
     th { text-align:left; font-weight:normal; }
     pre { padding:5px; color:#252525; display:inline-block; margin:0 0 0 10px; max-width:500px; overflow:scroll; }
     .tabbed { padding-left:10px; }
-    footer { color:white; padding:10px; }
+    footer { color:white; padding:10px; position:relative; }
     footer:nth-of-type(1) { background-color:rgb(7, 115, 120); }
     footer:nth-of-type(2) { background-color:rgb(1, 91, 95); text-align:center; line-height:0; }
-    footer ul { list-style-type:none; padding-left:10px; }
+    footer ul { display:inline-block; list-style-type:none; padding:0 10px 0 10px; vertical-align:top; border-right:2px solid white;  }
+    footer ul:last-of-type { border-right:none }
   </style>
 </head>
 <body>
@@ -133,9 +134,14 @@
       <li><a href="">top</a></li>
       <li><a href="../playground.html">example</a></li>
     </ul>
+    <ul>
+      <li><a href="https://github.com/straversi">Steven Traversi</a></li>
+      <li>Bug? <a href="mailto:straversi@berkeley.edu">straversi@berkeley.edu</a></li>
+    </ul>
   </footer>
   <footer>
-    <img src="../assets/github.png" width="64" alt="github icon">
+    <h2 style="position:absolute;display:inline-block;top:24%;left:10px;">Typer.js</h3>
+    <a href="https://github.com/straversi/Typer.js"><img src="../assets/github.png" width="64" alt="github icon"></a>
   </footer>
 </body>
 <script>
