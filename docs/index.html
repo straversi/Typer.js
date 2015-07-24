@@ -9,12 +9,16 @@
   <style>
     header { color:white; background-color:rgb(49, 149, 154); padding:10px; }
     body { font-size:17px; line-height:20px; margin:0; font-family:'Lato',Helvetica,Arial,sans-serif; color:#252525; }
-    h1,h2,h3,h4,th { font-family:'PT Sans';}
+    h1,h2,h3,h4,th { font-family:'PT Sans'; }
+    a { text-decoration:none; color:inherit; }
+    button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; color:white; padding:5px; font-size:1.1em; font-weight:bold; margin:2px; vertical-align:bottom; }
+    button:hover:active { border-bottom-width:0; margin-top:5px; }
+    button:hover { border-bottom-width:2px; margin-top:3px; cursor:pointer; }
     .content { padding:10px; }
     code { font-weight:normal; font-family:'Bitter','Consolas','Menlo'; } /* #218C90 */
     code.attn { color:rgb(215, 23, 13); }
     code.note { color:rgb(215, 150, 13); }
-    table { border-spacing:0px 3px; font-size:.9em; line-height:1.8em; }
+    table { border-spacing:0px 3px; font-size:.9em; line-height:1.8em; max-width:800px; }
     td { vertical-align:top; padding:6px; /* border-top: 1px solid rgb(80, 102, 103);*/ }
     td:nth-of-type(1) { background-color:rgb(219, 242, 243); }
     td:nth-of-type(2) { background-color:rgb(243, 252, 252); }
@@ -23,15 +27,21 @@
     pre { margin: 3px; }
     footer { color:white; padding:10px; }
     footer:nth-of-type(1) { background-color:rgb(7, 115, 120); }
-    footer:nth-of-type(2) { background-color:rgb(1, 91, 95); }
+    footer:nth-of-type(2) { background-color:rgb(1, 91, 95); text-align:center; line-height:0; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Typer.js</h1>
+    <h1><a href="../index.html">Typer.js</a></h1>
     <h2>Documentation</h2>
   </header>
   <div class="content">
+  <a href="../typer.js" target="_blank" download><button>Get Typer.js</button></a>
+  <a class="github-button" href="https://github.com/straversi/Typer.js" data-style="mega"
+  data-count-href="/straversi/Typer.js/stargazers"
+  data-count-api="/repos/straversi/Typer.js#stargazers_count"
+  data-count-aria-label="# stargazers on GitHub"
+  aria-label="Star straversi/Typer.js on GitHub">Star</a>
   <h3>Getting Started</h3>
   <p>
     Here's how to hit the ground running: it's very simple, as all of
@@ -45,7 +55,7 @@
   </p>
   <h3>class <code>typer</code></h3>
   <table>
-    <th>Configurable options</th>
+    <th>Options</th>
     <tr>
       <td><code>data-words</code><br></td>
       <td>A comma-delimited list of words to be typed.<br>
@@ -64,7 +74,9 @@
     <tr>
       <td><code>id</code> (<code class="note">potential dependency</code>)</td>
       <td>A unique identifier that can be used to set the owner property of
-      other objects.</td>
+      other objects. This must be set if a <code>cursor</code>,
+      <code>typer-start</code>, or <code>typer-stop</code> is used with this
+      typer.</td>
     </tr>
     <tr>
       <td><code>data-deleteDelay</code></td>
@@ -79,9 +91,10 @@
   </table>
   <h3>class <code>cursor</code></h3>
   <table>
+    <th>Options</th>
     <tr>
       <td><code>data-owner</code> (<code class="attn">required</code>)</td>
-      <td>Specifies the id of the typer associated with this cursor.</td>
+      <td>Specifies the id of the typer DOM object associated with this cursor.</td>
     </tr>
     <tr>
       <td><code>data-cursorDisplay</code></td>
@@ -91,16 +104,18 @@
   </table>
   <h3>class <code>typer-start</code></h3>
   <table>
+    <th>Options</th>
     <tr>
       <td><code>data-owner</code> (<code class="attn">required</code>)</td>
-      <td>Specifies the id of the typer associated with this button.</td>
+      <td>Specifies the id of the typer DOM object associated with this button.</td>
     </tr>
   </table>
   <h3>class <code>typer-stop</code></h3>
   <table>
+    <th>Options</th>
     <tr>
       <td><code>data-owner</code> (<code class="attn">required</code>)</td>
-      <td>Specifies the id of the typer associated with this button.</td>
+      <td>Specifies the id of the typer DOM object associated with this button.</td>
     </tr>
   </table>
   </div>
@@ -108,8 +123,9 @@
     Thank you for reading the documentation. Internal links here.
   </footer>
   <footer>
-    This article brought to you by etc. External links here.
+    <img src="../assets/github.png" width="64" alt="github icon">
   </footer>
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>
 <script>
   var h3s = document.getElementsByTagName("h3")
