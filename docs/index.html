@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <title>Typer.js Documentation</title>
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
   <style>
     header { color:white; background-color:rgb(49, 149, 154); padding:10px; }
-    body { font-size:17px; line-height:20px; margin:0; font-family:Helvetica,Arial,sans-serif; color:#252525; }
+    body { font-size:17px; line-height:20px; margin:0; font-family:'Lato',Helvetica,Arial,sans-serif; color:#252525; }
     h1,h2,h3,h4,th { font-family:'PT Sans';}
     .content { padding:10px; }
-    code { /*color:rgb(23, 140, 145);*/ font-weight:normal; font-family:'Consolas','Menlo'; } /* #218C90 */
+    code { font-weight:normal; font-family:'Bitter','Consolas','Menlo'; } /* #218C90 */
     code.attn { color:rgb(215, 23, 13); }
     code.note { color:rgb(215, 150, 13); }
-    table { border-spacing:0px 2px; }
-    td { vertical-align:top; padding:4px; /* border-top: 1px solid rgb(80, 102, 103);*/ }
+    table { border-spacing:0px 3px; font-size:.9em; line-height:1.8em; }
+    td { vertical-align:top; padding:6px; /* border-top: 1px solid rgb(80, 102, 103);*/ }
     td:nth-of-type(1) { background-color:rgb(219, 242, 243); }
     td:nth-of-type(2) { background-color:rgb(243, 252, 252); }
     tr { border-top: 2px solid rgb(80, 102, 103); }
@@ -43,49 +45,62 @@
   </p>
   <h3>class <code>typer</code></h3>
   <table>
-    <th>Properties</th>
+    <th>Configurable options</th>
     <tr>
       <td><code>data-words</code><br></td>
       <td>A comma-delimited list of words to be typed.<br>
-        Default: 'Sample typing'<br></td>
+        <b>Default:</b> 'Sample typing'</td>
+    </tr>
+    <tr>
+      <td><code>data-delim</code></td>
+      <td>Specifies the delimter used in <code>data-words</code><br>
+        <b>Default:</b> ,</td>
     </tr>
     <tr>
       <td><code>data-delay</code></td>
+      <td>The time delay between typed characters.<br>
+        <b>Default:</b> 200</td>
     </tr>
     <tr>
       <td><code>id</code> (<code class="note">potential dependency</code>)</td>
-    </tr>
-    <tr>
-      <td><code>data-delay</code></td>
+      <td>A unique identifier that can be used to set the owner property of
+      other objects.</td>
     </tr>
     <tr>
       <td><code>data-deleteDelay</code></td>
+      <td>The time delay before a completed word is de-typed.<br>
+        <b>Default:</b> 800</td>
     </tr>
     <tr>
       <td><code>data-colors</code></td>
+      <td>A comma-delimited list of colors to cycle through. One color per word.<br>
+        <b>Default:</b> black</td>
     </tr>
   </table>
   <h3>class <code>cursor</code></h3>
   <table>
     <tr>
       <td><code>data-owner</code> (<code class="attn">required</code>)</td>
-      <td>TEJSKLFJDKLSJFKLDSFJKDLS</td>
+      <td>Specifies the id of the typer associated with this cursor.</td>
     </tr>
     <tr>
       <td><code>data-cursorDisplay</code></td>
-      <td>SLDKFJ SLDKFJ DLSKFJDLKS FJLK<br>Example:<pre>SDKLFJSDLKFJ</pre></td>
+      <td>The cursor representation.<br>
+        <b>Default:</b> _</td>
     </tr>
   </table>
   <h3>class <code>typer-start</code></h3>
   <table>
     <tr>
       <td><code>data-owner</code> (<code class="attn">required</code>)</td>
+      <td>Specifies the id of the typer associated with this button.</td>
     </tr>
   </table>
   <h3>class <code>typer-stop</code></h3>
   <table>
     <tr>
       <td><code>data-owner</code> (<code class="attn">required</code>)</td>
+      <td>Specifies the id of the typer associated with this button.</td>
     </tr>
   </table>
   </div>
@@ -101,8 +116,8 @@
   for (var i = 0, e; e = h3s[i++];) {
     var id = e.innerHTML.replace(" ","-");
     e.id = id;
-    var paraJump = "<a href='#" + id + "' style='text-decoration:none;font-size:.8em;display:none;color:black;vertical-atrgn:bottom;'> &para;</a>";
-    e.onmouseenter = function(){ this.querySelector("a").style.display = "intrne";};
+    var paraJump = "<a href='#" + id + "' style='text-decoration:none;font-size:.8em;display:none;color:black;vertical-align:bottom;'> &para;</a>";
+    e.onmouseenter = function(){ this.querySelector("a").style.display = "inline";};
     e.onmouseleave = function(){ this.querySelector("a").style.display = "none";};
     e.innerHTML = e.innerHTML + paraJump;
   }
