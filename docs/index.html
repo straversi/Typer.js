@@ -12,9 +12,9 @@
     h1,h2,h3,h4,th { font-family:'PT Sans'; }
     h1 a { text-decoration:none; }
     a { color:inherit; }
-    button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; color:white; padding:5px; height:30px; font-weight:bold; margin:0px; vertical-align:top; }
-    button:hover:active { border-bottom-width:0; margin-top:3px; height:27px;}
-    button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:29px;}
+    .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; color:white; padding:5px; height:17px; font-weight:bold; margin:0px; vertical-align:top; text-decoration:none; display:inline-block;}
+    .button:hover:active { border-bottom-width:0; margin-top:3px;}
+    .button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:17px;}
     .content { padding:10px; }
     code, pre { font-weight:normal; font-family:'Bitter','Consolas','Menlo'; } /* #218C90 */
     code.attn { color:rgb(215, 23, 13); }
@@ -32,7 +32,7 @@
     footer:nth-of-type(1) { background-color:rgb(7, 115, 120); }
     footer:nth-of-type(2) { background-color:rgb(1, 91, 95); text-align:center; line-height:0; }
     footer ul { display:inline-block; list-style-type:none; padding:0 10px 0 10px; vertical-align:top; border-right:2px solid white;  }
-    footer ul:last-of-type { border-right:none }
+    footer ul:last-of-type { border-right:none; }
   </style>
 </head>
 <body>
@@ -41,11 +41,11 @@
     <h2>Documentation</h2>
   </header>
   <div class="content">
-  <a href="../typer.js" target="_blank" download><button>Get Typer.js</button></a>
+  <a class="button" href="../typer.js" target="_blank" download>Get Typer.js</a>
   <iframe src="https://ghbtns.com/github-btn.html?user=straversi&repo=Typer.js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
   <h3>Getting Started</h3>
   <p>
-    Get ready to use Typer.js very simple; all of Typer.js is packaged in one
+    Getting ready to use Typer.js very simple; all of Typer.js is packaged in one
     short javascript file.<br>
     Place the following at the end of your html file, right before the body
     tag closes. Be sure to change the filepath in <code class="inset">src</code>

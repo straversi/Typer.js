@@ -3,10 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>Typer.js</title>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <style>
+    html, body { margin:0; width:100%; }
+    body { margin:0; width:100%; background-image:linear-gradient(200deg, rgb(74, 174, 179) 10%, rgb(42, 80, 167) 100%); background-repeat:no-repeat; background-size:cover; font-size:17px; }
+    .top-space { height:25vh; max-height:200px; }
+    .titles { width:calc(100% - 40px); margin:20px; position:relative; color:white; font-family:'PT Sans',sans-serif; margin-bottom:100px; }
+    .titles h1,.titles p { text-align:center; position:relative; }
+    header { padding:5px; color:white; font-family:'PT Sans',sans-serif; background-color:rgba(21, 21, 23, 0.4); text-align:right; -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 7px 0px; }
+    header ul { margin:0; padding:0; }
+    header ul > li { display:inline; }
+    .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; color:white; padding:5px; height:17px; font-weight:bold; margin:0px; vertical-align:top; text-decoration:none; display:inline-block;}
+    .button:hover:active { border-bottom-width:0; margin-top:3px;}
+    .button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:17px;}
+    .reviews { font-size:0; }
+    .review { text-align:left; font-family:'PT Sans',sans-serif; color:white; padding:10px; display:inline-block; width:calc(50% - 20px); max-height:120px; overflow:hidden; vertical-align:top; }
+    @media screen and (max-width:700px) { .review { width:calc(100% - 20px); } }
+    .review .picture { width:100px; height:100px; float:left; border-radius:50px; border:1px solid rgb(49, 49, 52); margin-right:10px; }
+    .review h3 { margin-bottom:0; font-size:initial; }
+    .review p { margin-top:0; font-size:initial; }
+  </style>
 </head>
 <body>
-  <h1>Typer.js is <span class="typer" data-words="fun,exciting,easy"></span></h1>
-  <h2>the Typing effect with a pure HTML interface</h2>
+  <header>
+    <span style="float:left;font-size:23px;font-weight:700;">Typer.js</span>
+    <ul>
+      <li><a class="button" href="docs/index.html">Documentation</a></li>
+      <li><a class="button" href="">Examples</a></li>
+      <li><a class="button" href="">Download</a></li>
+    </ul>
+  </header>
+  <div class="top-space"></div>
+  <div class="titles">
+    <h1>Typer.js is <span class="typer" data-words="sooooooooooo greeeaaaatttt,fun,lightweight,easy" data-colors="white" data-delay="150"></span></h1>
+    <p>the typing effect with a pure HTML interface</p>
+  </div>
+  <div class="reviews">
+    <div class="review">
+      <div class="picture" style="background-image:url('assets/CarlosFlores.jpg');background-size:100%;"></div>
+      <h3>Carlos Flores</h3>
+      <p>My life is 1,000 times better now that I have Typer.js-- Thank you!</p>
+    </div>
+    <div class="review">
+      <div class="picture" style="background-image:url('assets/DougMack.png');background-size:auto 100%;"></div>
+      <h3>Doug Mack</h3>
+      <p>Thanks to Typer.js, Fanatics' stock price is up 1,000%. Steven is single-handedly
+      responsible for the success of the company.</p>
+    </div>
+    <div class="review">
+      <div class="picture" style="background-image:url('assets/BarackObama.jpg');background-size:auto 100%;"></div>
+      <h3>Barack Obama</h3>
+      <p>Typer.js has allowed access to health care for over 7 million Americans.</p>
+    </div>
+    <div class="review">
+      <div class="picture" style="background-image:url('assets/DwightSchrute.jpg');background-size:auto 100%;"></div>
+      <h3>Dwight Schrute</h3>
+      <p>Fact. Schrute Farms beet production is at a record high now that we use Typer.js.</p>
+    </div>
+  </div>
   <script src='typer.js'></script>
 </body>
 </html>
