@@ -18,9 +18,9 @@
     .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; color:white; padding:5px; height:17px; font-weight:bold; margin:0px; vertical-align:top; text-decoration:none; display:inline-block;}
     .button:hover:active { border-bottom-width:0; margin-top:3px;}
     .button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:17px;}
-    .reviews { position:relative; font-size:0; padding-top:10px; background-color:rgba(21, 21, 23, 0.4); }
-    .review { text-align:left; font-family:'PT Sans',sans-serif; color:white; padding:10px; display:inline-block; width:calc(50% - 20px); max-height:120px; overflow:hidden; vertical-align:top; }
-    @media screen and (max-width:700px) { .review { width:calc(100% - 20px); } .special-break::after { content:'\00000a'; } .top-space { height:15vh; } }
+    .reviews { position:relative; font-size:0; padding-top:10px; background-color:rgba(21, 21, 23, 0.4); text-align:center; }
+    .review { text-align:left; font-family:'PT Sans',sans-serif; color:white; padding:10px; display:inline-block; width:calc(50% - 20px); max-height:120px; overflow:hidden; vertical-align:top; max-width:475px; }
+    @media screen and (max-width:700px) { .review { width:calc(100% - 20px); } .special-break::after { content:'\00000a'; } .top-space { height:15vh; } .review { max-width:none; }}
     .review .picture { width:100px; height:100px; float:left; border-radius:50px; border:1px solid rgb(49, 49, 52); margin-right:10px; }
     .review h3 { margin-bottom:0; font-size:initial; }
     .review p { margin-top:0; font-size:initial; }
