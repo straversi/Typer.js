@@ -6,25 +6,30 @@
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    html, body { margin:0; width:100%; }
+    html, body { margin:0; width:100%; color:white; }
+    a { color:white; }
     body { margin:0; width:100%; background-image:linear-gradient(200deg, rgb(74, 174, 179) 10%, rgb(42, 80, 167) 100%); background-repeat:no-repeat; background-size:cover; font-size:17px; }
+    p { font-family:'PT Sans',sans-serif; }
+    .information { margin:0 auto; max-width:800px; }
+    .information td { padding:10px; vertical-align:middle; }
+    .information img { width:40px; }
     .top-space { height:20vh; max-height:200px; }
-    .titles { width:calc(100% - 40px); margin:20px; position:relative; color:white; font-family:'PT Sans',sans-serif; margin-bottom:150px; }
+    .titles { width:calc(100% - 40px); margin:20px; position:relative; font-family:'PT Sans',sans-serif; margin-bottom:150px; }
     .titles h1 { white-space:pre-line; }
     .titles h1,.titles p { text-align:center; position:relative; }
-    header { padding:5px; color:white; font-family:'PT Sans',sans-serif; background-color:rgba(21, 21, 23, 0.4); text-align:right; -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 7px 0px; }
+    header { padding:5px; font-family:'PT Sans',sans-serif; background-color:rgba(21, 21, 23, 0.4); text-align:right; -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 7px 0px; }
     header ul { margin:0; padding:0; }
     header ul > li { display:inline; }
-    .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; color:white; padding:5px; height:17px; font-weight:bold; margin:0px; vertical-align:top; text-decoration:none; display:inline-block;}
+    .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; padding:5px; height:17px; font-weight:bold; margin:0px; vertical-align:top; text-decoration:none; display:inline-block;}
     .button:hover:active { border-bottom-width:0; margin-top:3px;}
     .button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:17px;}
     .reviews { position:relative; font-size:0; padding-top:10px; background-color:rgba(21, 21, 23, 0.4); text-align:center; }
-    .review { text-align:left; font-family:'PT Sans',sans-serif; color:white; padding:10px; display:inline-block; width:calc(50% - 20px); max-height:120px; overflow:hidden; vertical-align:top; max-width:475px; }
+    .review { text-align:left; font-family:'PT Sans',sans-serif; padding:10px; display:inline-block; width:calc(50% - 20px); max-height:120px; overflow:hidden; vertical-align:top; max-width:400px; }
     @media screen and (max-width:700px) { .review { width:calc(100% - 20px); } .special-break::after { content:'\00000a'; } .top-space { height:15vh; } .review { max-width:none; }}
     .review .picture { width:100px; height:100px; float:left; border-radius:50px; border:1px solid rgb(49, 49, 52); margin-right:10px; }
     .review h3 { margin-bottom:0; font-size:initial; }
     .review p { margin-top:0; font-size:initial; }
-    .reviews-title { position:absolute; left:10px; top:0; -webkit-transform:translateY(-100%); display:inline-block; background-color:rgba(21, 21, 23, 0.4); font-size:initial; color:white; font-family:'PT Sans',sans-serif; padding:6px; border-radius:2px 2px 0 0; }
+    .reviews-title { position:absolute; left:10px; top:0; -webkit-transform:translateY(-100%); display:inline-block; background-color:rgba(21, 21, 23, 0.4); font-size:initial; font-family:'PT Sans',sans-serif; padding:6px; border-radius:2px 2px 0 0; }
   </style>
 </head>
 <body>
@@ -53,6 +58,7 @@
       <h3>Big Daddy Kane</h3>
       <p>I'm the authentic poet to get lyrical<br>For you to beat me, it's gonna take Typer.js</p>
     </div>
+    <br>
     <div class="review">
       <div class="picture" style="background-image:url('assets/BarackObama.jpg');background-size:auto 100%;"></div>
       <h3>Barack Obama</h3>
@@ -64,6 +70,32 @@
       <p>Fact. Schrute Farms beet production is at a record high now that we use Typer.js.</p>
     </div>
   </div>
+  <table class="information">
+  <tr>
+    <td>
+      <img src="assets/document_ok.svg" alt="a document with a check">
+    </td>
+    <td>
+      <p>
+      Using Typer.js is easy. Include the small javascript file by placing
+      <code>&lt;script src='typer.js'&gt;&lt;/script&gt;</code> at the bottom of
+      your HTML file.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="assets/book_2.svg" alt="a book">
+    </td>
+    <td>
+      <p>
+      A pure HTML interface is important for readability. With Typer.js, you'll never
+      have to open a javascript file to change the attributes or words of the typing effect.
+      The words used appear right along the rest of your HTML, like they should.
+      </p>
+    </td>
+  </tr>
+</table>
   <script src='typer.js'></script>
 </body>
 </html>
