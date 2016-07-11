@@ -64,23 +64,6 @@ Typer.prototype.doTyping = function() {
   }, p.atWordEnd ? this.deleteDelay : this.delay);
 };
 
-typers = {};
-elements = document.getElementsByClassName("typer");
-for (var i = 0, e; e = elements[i++];) {
-  typers[e.id] = new Typer(e);
-}
-elements = document.getElementsByClassName("typer-stop");
-for (var i = 0, e; e = elements[i++];) {
-  var owner = typers[e.dataset.owner];
-  e.onclick = function(){owner.stop();};
-}
-elements = document.getElementsByClassName("typer-start");
-for (var i = 0, e; e = elements[i++];) {
-  var owner = typers[e.dataset.owner];
-  e.onclick = function(){owner.start();};
-}
-
-
 var Cursor = function(element) {
   this.element = element;
   this.cursorDisplay = element.dataset.cursorDisplay || "_";
@@ -103,9 +86,29 @@ Cursor.prototype.updateBlinkState = function() {
   }
 }
 
-elements2 = document.getElementsByClassName("cursor");
-for (var i = 0, e; e = elements2[i++];) {
-  var t = new Cursor(e);
-  t.owner.cursor = t;
-  console.log(t.owner.cursor);
+function TyperSetup() {
+  typers = {};
+  elements = document.getElementsByClassName("typer");
+  for (var i = 0, e; e = elements[i++];) {
+    typers[e.id] = new Typer(e);
+  }
+  elements = document.getElementsByClassName("typer-stop");
+  for (var i = 0, e; e = elements[i++];) {
+    var owner = typers[e.dataset.owner];
+    e.onclick = function(){owner.stop();};
+  }
+  elements = document.getElementsByClassName("typer-start");
+  for (var i = 0, e; e = elements[i++];) {
+    var owner = typers[e.dataset.owner];
+    e.onclick = function(){owner.start();};
+  }
+
+  elements2 = document.getElementsByClassName("cursor");
+  for (var i = 0, e; e = elements2[i++];) {
+    var t = new Cursor(e);
+    t.owner.cursor = t;
+    console.log(t.owner.cursor);
+  }
 }
+
+TyperSetup();
