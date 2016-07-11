@@ -3,6 +3,8 @@ Typing effect completely configurable in HTML
 
 Live page: http://steven.codes/typerjs
 
+![example gif of typing effect](assets/example.gif)
+
 ## Features
 - Change speed and delays
 - Configurable cursors
