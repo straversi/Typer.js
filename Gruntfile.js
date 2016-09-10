@@ -32,6 +32,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     // grunt.loadNpmTasks('grunt-jsdoc-ng');
+    grunt.loadNpmTasks('grunt-jsbeautifier');
 
 
 
@@ -132,6 +133,17 @@ module.exports = function(grunt) {
             }
         },
 
+        jsbeautifier: {
+            src : [
+                '<%= config.dist %>/**/*'
+            ],
+            options:{
+                js: {
+                    indentSize: 2
+                }
+            }
+        },
+
 
         //
         // Watch
@@ -171,7 +183,7 @@ module.exports = function(grunt) {
     // -----------------------------------------------------------------------------
     grunt.registerTask('default', [
         'clean',
-        'js',
+        'js'
         // 'jsdoc-ng'
     ]);
 
@@ -179,7 +191,8 @@ module.exports = function(grunt) {
         'concat',
         'uglify',
         'jshint',
-        'closure-compiler'
+        'closure-compiler',
+        'jsbeautifier'
     ]);
 
     // grunt.registerTask('doc', [

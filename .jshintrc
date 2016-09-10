@@ -32,5 +32,6 @@
     "-W040"     : false,
 
     "-W069"     : false,
-    "-W098"     : false
+    "-W098"     : false,
+    "-W084"     : false
 }

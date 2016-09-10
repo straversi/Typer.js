@@ -1,7 +1,7 @@
 {
   "name": "Typer.js",
   "description": "Typing effect completely configurable in HTML",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Steven Traversi <straversi@berkeley.edu>",
     "Ken Frederick <frederickk@google.com>"

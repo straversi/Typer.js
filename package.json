@@ -2,7 +2,7 @@
   "name": "Typer.js",
   "filename": "Typer",
   "description": "A barebones Drive API Library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Steven Traversi <straversi@berkeley.edu>",
     "Ken Frederick <frederickk@google.com>"
@@ -32,6 +32,7 @@
     "grunt-contrib-qunit": "~0.3.0",
     "grunt-contrib-uglify": "~0.2.5",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-jsbeautifier": "^0.2.13",
     "grunt-jsdoc-ng": "0.0.3",
     "jsdoc": "^3.4.0"
   }
