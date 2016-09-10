@@ -1,15 +1,15 @@
- /**!
-  *
-  * Typer.js
-  * @VERSION
-  * @DATE
-  *
-  * Typing effect completely configurable in HTML
-  *
-  * Steven Traversi
-  * straversi@berkeley.edu
-  *
-  * Ken Frederick
-  * frederickk@google.com
-  *
-  */
+/**!
+ *
+ * Typer.js
+ * @VERSION
+ * @DATE
+ *
+ * Typing effect completely configurable in HTML
+ *
+ * Steven Traversi
+ * straversi@berkeley.edu
+ *
+ * Ken Frederick
+ * frederickk@google.com
+ *
+ */
