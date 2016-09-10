@@ -2,7 +2,7 @@
 
 /**!
  *
- * Typer.js
+ * typer.js
  * gruntfile.js
  *
  */
@@ -78,8 +78,8 @@ module.exports = function(grunt) {
                     compilation_level : 'ADVANCED_OPTIMIZATIONS',
                     language_in       : 'ECMASCRIPT6_STRICT',
                 },
-                js           : '<%= config.dist %>/Typer.js',
-                jsOutputFile : '<%= config.dist %>/Typer.min.js',
+                js           : '<%= config.dist %>/typer.js',
+                jsOutputFile : '<%= config.dist %>/typer.min.js',
                 maxBuffer    : 500,
                 noreport     : true
             }
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
             },
             target: {
                 // src: ['<%= config.src %>/**/*.js']
-                src: ['<%= config.dist %>/Typer.js']
+                src: ['<%= config.dist %>/typer.js']
             }
         },
 
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
                 },
                 dest: '<%= config.dist %>/' + name + '.js',
                 src: [
-                    '<%= config.src %>/Typer.js'
+                    '<%= config.src %>/typer.js'
                 ]
             }
         },
@@ -164,7 +164,7 @@ module.exports = function(grunt) {
         //         src: [
         //             'README.md',
         //             '<%= config.src %>/*.js',
-        //             '!<%= config.src %>/Typer.js'
+        //             '!<%= config.src %>/typer.js'
         //         ],
         //         dest: 'documentation/classes/',
         //         options: {

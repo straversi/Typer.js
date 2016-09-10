@@ -8,8 +8,8 @@
   ],
   "homepage": "https://github.com/frederickk/Typer.js",
   "main": [
-    "distribution/Typer.js",
-    "distribution/Typer.min.js"
+    "distribution/typer.js",
+    "distribution/typer.min.js"
   ],
   "keywords": [
     "javascript",

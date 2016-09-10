@@ -1,6 +1,6 @@
 {
   "name": "Typer.js",
-  "filename": "Typer",
+  "filename": "typer",
   "description": "A barebones Drive API Library",
   "version": "0.0.2",
   "authors": [
@@ -13,8 +13,8 @@
     "url": ""
   },
   "main": [
-    "distribution/Typer.js",
-    "distribution/Typer.min.js"
+    "distribution/typer.js",
+    "distribution/typer.min.js"
   ],
   "keywords": [
     "javascript",
