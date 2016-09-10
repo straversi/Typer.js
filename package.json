@@ -1,0 +1,38 @@
+{
+  "name": "Typer.js",
+  "filename": "Typer",
+  "description": "A barebones Drive API Library",
+  "version": "0.0.1",
+  "authors": [
+    "Steven Traversi <straversi@berkeley.edu>",
+    "Ken Frederick <frederickk@google.com>"
+  ],
+  "homepage": "https://github.com/frederickk/Typer.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": [
+    "distribution/Typer.js",
+    "distribution/Typer.min.js"
+  ],
+  "keywords": [
+    "javascript",
+    "library"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-closure-compiler": "0.0.21",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-qunit": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.5",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-jsdoc-ng": "0.0.3",
+    "jsdoc": "^3.4.0"
+  }
+}
