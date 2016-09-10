@@ -41,8 +41,3 @@ Add the following after your typer span to create a cursor. Make sure to add `id
 ```
 <span class="cursor" data-owner="first-typer"></span>
 ```
-
-
-
-
-
