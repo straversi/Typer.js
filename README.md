@@ -15,9 +15,8 @@ Live page
 
 
 ### TODO
-- [x] Refactor setup js into a setup function that can be run onload/in $() [Done: see TyperSetup function]
 - [x] Show code for the example on http://steven.codes/typerjs/playground.html so you don't have to open web inspector
-
+- [ ] Improve randomization to be more human like
 
 ### Getting Started
 Getting ready to use Typer.js very simple; all of Typer.js is packaged in one short javascript file.
