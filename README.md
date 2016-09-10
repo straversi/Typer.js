@@ -1,20 +1,48 @@
 # Typer.js
 Typing effect completely configurable in HTML
 
-Live page: http://steven.codes/typerjs
+Live page
+[http://steven.codes/typerjs](http://steven.codes/typerjs)
 
-![example gif of typing effect](assets/not_the_first_example.gif)
+![example gif of typing effect](demo/assets/not_the_first_example.gif)
 
-## Features
+
+### Features
 - Change speed and delays
 - Configurable cursors
 - Colors
 - On/Off
 
-## TODO
+
+### TODO
 - [x] Refactor setup js into a setup function that can be run onload/in $() [Done: see TyperSetup function]
 - [x] Show code for the example on http://steven.codes/typerjs/playground.html so you don't have to open web inspector
 
-If you're getting element not found errors, a potential source of the problem could be that your elements aren't loading
-in time before the Typer.js script runs. Try moving the `TyperSetup()` line at the end of Typer.js to inside some sort
-of `onLoad` function.
+
+### Getting Started
+Getting ready to use Typer.js very simple; all of Typer.js is packaged in one short javascript file.
+
+Place the following at the end of your html file, right before the body tag closes. Be sure to change the filepath in src to reflect your case.
+
+```
+<script src='typer.js'></script>
+```
+
+That's it. Here's an example typer to get you started:
+
+```
+<p>
+	I enjoy <span class="typer" data-delay="150" data-words="apples,oranges,blueberries" data-colors="red,orange,blue"></span>
+</p>
+```
+
+Add the following after your typer span to create a cursor. Make sure to add `id="first-typer"` to the typer as well, or else cursor won't know who to listen to.
+
+```
+<span class="cursor" data-owner="first-typer"></span>
+```
+
+
+
+
+
