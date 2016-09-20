@@ -1,0 +1,27 @@
+{
+  "name": "Typer.js",
+  "description": "Typing effect completely configurable in HTML",
+  "version": "0.0.2",
+  "authors": [
+    "Steven Traversi <straversi@berkeley.edu>",
+    "Ken Frederick <frederickk@google.com>"
+  ],
+  "homepage": "https://github.com/frederickk/Typer.js",
+  "main": [
+    "distribution/typer.js",
+    "distribution/typer.min.js"
+  ],
+  "keywords": [
+    "javascript",
+    "library"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
