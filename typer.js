@@ -5,7 +5,7 @@ var Typer = function(element) {
   var words = element.dataset.words || "override these,sample typing";
   this.words = words.split(delim).filter(function(v){return v;}); // non empty words
   this.delay = element.dataset.delay || 200;
-  this.deleteDelay = element.dataset.deleteDelay || 800;
+  this.deleteDelay = element.dataset.deletedelay || element.dataset.deleteDelay || 800;
 
   this.progress = { word:0, char:0, building:true, atWordEnd:false };
   this.typing = true;
