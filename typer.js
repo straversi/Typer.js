@@ -5,9 +5,10 @@ var Typer = function(element) {
   var words = element.dataset.words || "override these,sample typing";
   this.words = words.split(delim).filter(function(v){return v;}); // non empty words
   this.delay = element.dataset.delay || 200;
+  this.loop = element.dataset.loop || true;
   this.deleteDelay = element.dataset.deletedelay || element.dataset.deleteDelay || 800;
 
-  this.progress = { word:0, char:0, building:true, atWordEnd:false };
+  this.progress = { word:0, char:0, building:true, atWordEnd:false, looped: 0 };
   this.typing = true;
 
   var colors = element.dataset.colors || "black";
@@ -58,6 +59,13 @@ Typer.prototype.doTyping = function() {
       this.element.style.color = this.colors[this.colorIndex];
     }
   }
+  
+  if(p.atWordEnd) p.looped += 1;
+
+  if(!p.building && (!this.loop || this.loop <= p.looped) ){
+    this.typing = false;
+  }
+  
   var myself = this;
   setTimeout(function() {
     if (myself.typing) { myself.doTyping(); };
