@@ -62,7 +62,7 @@ Typer.prototype.doTyping = function() {
   
   if(p.atWordEnd) p.looped += 1;
 
-  if(!p.building && (!this.loop || this.loop <= p.looped) ){
+  if(!p.building && (this.loop == "false" || this.loop <= p.looped) ){
     this.typing = false;
   }
   
