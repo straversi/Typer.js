@@ -74,7 +74,7 @@ Typer.prototype.doTyping = function() {
 
 var Cursor = function(element) {
   this.element = element;
-  this.cursorDisplay = element.dataset.cursorDisplay || "_";
+  this.cursorDisplay = element.dataset.cursordisplay || "_";
   this.owner = typers[element.dataset.owner] || "";
   element.innerHTML = this.cursorDisplay;
   this.on = true;
