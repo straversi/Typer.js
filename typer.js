@@ -1,5 +1,4 @@
 var Typer = function(element) {
-  console.log("constructor called");
   this.element = element;
   var delim = element.dataset.delim || ","; // default to comma
   var words = element.dataset.words || "override these,sample typing";
@@ -115,7 +114,6 @@ function TyperSetup() {
   for (var i = 0, e; e = elements2[i++];) {
     var t = new Cursor(e);
     t.owner.cursor = t;
-    console.log(t.owner.cursor);
   }
 }
 
