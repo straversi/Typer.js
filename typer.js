@@ -58,13 +58,13 @@ Typer.prototype.doTyping = function() {
       this.element.style.color = this.colors[this.colorIndex];
     }
   }
-  
+
   if(p.atWordEnd) p.looped += 1;
 
   if(!p.building && (this.loop == "false" || this.loop <= p.looped) ){
     this.typing = false;
   }
-  
+
   var myself = this;
   setTimeout(function() {
     if (myself.typing) { myself.doTyping(); };
@@ -95,22 +95,22 @@ Cursor.prototype.updateBlinkState = function() {
 
 function TyperSetup() {
   typers = {};
-  elements = document.getElementsByClassName("typer");
+  var elements = document.getElementsByClassName("typer");
   for (var i = 0, e; e = elements[i++];) {
     typers[e.id] = new Typer(e);
   }
-  elements = document.getElementsByClassName("typer-stop");
+  var elements = document.getElementsByClassName("typer-stop");
   for (var i = 0, e; e = elements[i++];) {
     var owner = typers[e.dataset.owner];
     e.onclick = function(){owner.stop();};
   }
-  elements = document.getElementsByClassName("typer-start");
+  var elements = document.getElementsByClassName("typer-start");
   for (var i = 0, e; e = elements[i++];) {
     var owner = typers[e.dataset.owner];
     e.onclick = function(){owner.start();};
   }
 
-  elements2 = document.getElementsByClassName("cursor");
+  var elements2 = document.getElementsByClassName("cursor");
   for (var i = 0, e; e = elements2[i++];) {
     var t = new Cursor(e);
     t.owner.cursor = t;
