@@ -74,7 +74,6 @@ Typer.prototype.doTyping = function() {
 var Cursor = function(element) {
   this.element = element;
   this.cursorDisplay = element.dataset.cursordisplay || "_";
-  // this.owner = typers[element.dataset.owner] || "";
   element.innerHTML = this.cursorDisplay;
   this.on = true;
   element.style.transition = "all 0.1s";
@@ -94,7 +93,7 @@ Cursor.prototype.updateBlinkState = function() {
 }
 
 function TyperSetup() {
-  typers = {};
+  var typers = {};
   var elements = document.getElementsByClassName("typer");
   for (var i = 0, e; e = elements[i++];) {
     typers[e.id] = new Typer(e);
