@@ -13,7 +13,6 @@ Live page: http://steven.codes/typerjs
 
 ## TODO
 - [ ] Add `human-like` option that varies character delays slightly
-- [ ] Get rid of global `typers` variable
 
 ## Common bugs
 
