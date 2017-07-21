@@ -74,7 +74,7 @@ Typer.prototype.doTyping = function() {
 var Cursor = function(element) {
   this.element = element;
   this.cursorDisplay = element.dataset.cursordisplay || "_";
-  this.owner = typers[element.dataset.owner] || "";
+  // this.owner = typers[element.dataset.owner] || "";
   element.innerHTML = this.cursorDisplay;
   this.on = true;
   element.style.transition = "all 0.1s";
@@ -113,6 +113,7 @@ function TyperSetup() {
   var elements2 = document.getElementsByClassName("cursor");
   for (var i = 0, e; e = elements2[i++];) {
     var t = new Cursor(e);
+    t.owner = typers[e.dataset.owner];
     t.owner.cursor = t;
   }
 }
