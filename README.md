@@ -5,11 +5,25 @@ Live page: http://steven.codes/typerjs
 
 ![example gif of typing effect](assets/not_the_first_example.gif)
 
+```html
+<h1>
+  I love
+  <span class="typer" id="first-typer" data-words="beets,bears,battlestar galactica" data-colors="#cd2032,#cc1e81,#6e6abb"></span>
+  <span class="cursor" data-owner="first-typer"></span>
+</h1>
+...
+<script src="typer.js"></script>
+```
+
+Never touch the JavaScript if you don't want to.
+
 ## Features
 - Change speed and delays
 - Configurable cursors
 - Colors
 - On/Off
+
+Explained in the [docs](http://steven.codes/typerjs/docs/)
 
 ## TODO
 - [ ] Add `human-like` option that varies character delays slightly
