@@ -5,6 +5,7 @@
   <title>Typer.js</title>
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./assets/desert.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     html, body { margin:0; width:100%; color:white; }
@@ -22,13 +23,14 @@
     .titles h1 { white-space:pre-line; }
     .titles h1,.titles p { text-align:center; position:relative; }
     .shadow { -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 7px 0px; }
-    header { padding:5px; font-family:'PT Sans',sans-serif; text-align:left; vertical-align:middle; position:relative; width:calc(100% - 10px); max-width:900px; margin: 0 auto;}
+    .center-section { position:relative; max-width:900px; margin: 0 auto; padding:5px; width:calc(100% - 10px); }
+    header { font-family:'PT Sans',sans-serif; text-align:left; vertical-align:middle;}
     header ul { margin:0; padding:0; display:inline-block; }
     header ul > li { display:inline; }
     .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; padding:5px; height:17px; font-weight:bold; margin:0px 0px 0px 5px; vertical-align:middle; text-decoration:none; display:inline-block;}
     .button:hover:active { border-bottom-width:0; margin-top:3px;}
     .button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:17px;}
-    .reviews { position:relative; font-size:0; padding:20px; background-color:rgba(255, 255, 255, 1.0); text-align:center; border-bottom:1px solid rgb(230,230,230); }
+    .reviews { position:relative; font-size:0; padding:20px; background-color:rgba(255, 255, 255, 1.0); text-align:center; border:1px solid rgb(230,230,230); border-width:1px 0 1px 0; }
     .review { text-align:left; color:black; padding:10px; display:inline-block; width:calc(50% - 20px); max-height:120px; overflow:hidden; vertical-align:top; max-width:450px; }
     @media screen and (max-width:700px) { .review { width:calc(100% - 20px); } .special-break::after { content:'\00000a'; } .top-space { height:15vh; } .review { max-width:none; } #gitLink { display:none; }}
     .review .picture { width:100px; height:100px; float:left; border-radius:50px; border:1px solid rgb(49, 49, 52); margin-right:10px; }
@@ -40,11 +42,13 @@
     .section { margin:0; padding:20px; text-align:center; font-size:0; }
     .section h2 { font-size:25px; }
     .section .infoblock { display:inline-block; font-size:17px; max-width:225px; width:calc(25%); background-color: green; margin:0; }
+    /* important!s override fetched prettyprint */
+    pre { overflow-x:scroll; padding: 10px !important; border: none !important; border-radius: 3px; }
   </style>
 </head>
 <body>
   <div class="title-area gradient-bg-1">
-    <header>
+    <header class="center-section">
       <span style="font-size:23px;font-weight:700;vertical-align:middle;">Typer.js</span>
       <ul>
         <li><a class="button" href="docs/index.html">Docs</a></li>
@@ -56,6 +60,22 @@
     <div class="titles">
       <h1>Typer.js is <span class="special-break"></span><span class="typer" id="main" data-words="great,fun,lightweight,easy" data-colors="white" data-delay="100" data-deleteDelay="1000"></span><span class="cursor" data-owner="main"></span></h1>
       <p>the typing effect with a pure HTML interface</p>
+    </div>
+  </div>
+  <div class="information-area">
+    <div class="center-section">
+      <h2>Quick Start</h2>
+      <p>1. <a class="button" href="typer.js" target="_blank" download>Download</a> the Typer.js file. It's only 3KB!</p>
+      <p>2. Place a link to the Typer.js script at the <em>bottom</em> of your file.</p>
+      <pre class="prettyprint">
+&lt;script src="typer.js"&gt;&lt;/script&gt;</pre>
+      <p>3. Place a typer and cursor into your file, like this:</p>
+      <pre class="prettyprint">
+&lt;h1&gt;Typer.js is
+  &lt;span class="typer" id="main" data-words="great,fun,lightweight,easy" data-colors="white" data-delay="100" data-deleteDelay="1000"&gt;&lt;/span&gt;
+  &lt;span class="cursor" data-owner="main"&gt;&lt;/span&gt;
+&lt;/h1&gt;
+&lt;p&gt;the typing effect with a pure HTML interface&lt;/p&gt;</pre>
     </div>
   </div>
   <div class="reviews" id="reviews">
@@ -127,5 +147,6 @@
     </div>
   </div> -->
   <script src='typer.js'></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 </html>
