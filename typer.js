@@ -103,18 +103,18 @@ function TyperSetup() {
   }
   var elements = document.getElementsByClassName("typer-stop");
   for (var i = 0, e; e = elements[i++];) {
-    var owner = typers[e.dataset.owner];
+    let owner = typers[e.dataset.owner];
     e.onclick = function(){owner.stop();};
   }
   var elements = document.getElementsByClassName("typer-start");
   for (var i = 0, e; e = elements[i++];) {
-    var owner = typers[e.dataset.owner];
+    let owner = typers[e.dataset.owner];
     e.onclick = function(){owner.start();};
   }
 
   var elements2 = document.getElementsByClassName("cursor");
   for (var i = 0, e; e = elements2[i++];) {
-    var t = new Cursor(e);
+    let t = new Cursor(e);
     t.owner = typers[e.dataset.owner];
     t.owner.cursor = t;
   }
