@@ -3,7 +3,7 @@ Typing effect completely configurable in HTML
 
 Live page: http://steven.codes/typerjs
 
-![example gif of typing effect](assets/not_the_first_example.gif)
+![example gif of typing effect](assets/bears.gif)
 
 ```html
 <h1>
