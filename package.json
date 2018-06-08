@@ -1,0 +1,9 @@
+{
+  "name": "typer.js",
+  "version": "1.0.0",
+  "main": "typer.js",
+  "keywords": ["typer", "html", "typing"],
+  "author": "straversi",
+  "license": "MIT",
+  "description": "Typing effect completely configurable in HTML."
+}
