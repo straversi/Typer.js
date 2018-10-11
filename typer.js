@@ -118,6 +118,7 @@ function TyperSetup() {
     t.owner = typers[e.dataset.owner];
     t.owner.cursor = t;
   }
+  window.typers = typers
 }
 
 TyperSetup();
