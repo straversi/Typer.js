@@ -1,14 +1,14 @@
 var Typer = function(element) {
   this.element = element;
-  var delim = element.dataset.delim || ","; // default to comma
+  var delim = element.dataset.delim || ",";
   var words = element.dataset.words || "override these,sample typing";
-  this.words = words.split(delim).filter(function(v){return v;}); // non empty words
+  this.words = words.split(delim).filter((v) => v); // non empty words
   this.delay = element.dataset.delay || 200;
   this.loop = element.dataset.loop || "true";
   if (this.loop === "false" ) { this.loop = 1 }
   this.deleteDelay = element.dataset.deletedelay || element.dataset.deleteDelay || 800;
 
-  this.progress = { word:0, char:0, building:true, looped: 0 };
+  this.progress = { word: 0, char: 0, building: true, looped: 0 };
   this.typing = true;
 
   var colors = element.dataset.colors || "black";
@@ -39,8 +39,7 @@ Typer.prototype.doTyping = function() {
     this.cursor.element.style.opacity = "1";
     this.cursor.on = true;
     clearInterval(this.cursor.interval);
-    var itself = this.cursor;
-    this.cursor.interval = setInterval(function() {itself.updateBlinkState();}, 400);
+    this.cursor.interval = setInterval(() => this.cursor.updateBlinkState(), 400);
   }
 
   e.innerHTML = currentDisplay;
@@ -53,7 +52,7 @@ Typer.prototype.doTyping = function() {
       p.char += 1;
     }
   } else {
-    if (p.char == 0) {
+    if (p.char === 0) {
       p.building = true;
       p.word = (p.word + 1) % this.words.length;
       this.colorIndex = (this.colorIndex + 1) % this.colors.length;
@@ -71,9 +70,8 @@ Typer.prototype.doTyping = function() {
     this.typing = false;
   }
 
-  var myself = this;
-  setTimeout(function() {
-    if (myself.typing) { myself.doTyping(); };
+  setTimeout(() => {
+    if (this.typing) { this.doTyping() };
   }, atWordEnd ? this.deleteDelay : this.delay);
 };
 
@@ -83,10 +81,7 @@ var Cursor = function(element) {
   element.innerHTML = this.cursorDisplay;
   this.on = true;
   element.style.transition = "all 0.1s";
-  var myself = this;
-  this.interval = setInterval(function() {
-    myself.updateBlinkState();
-  }, 400);
+  this.interval = setInterval(() => this.updateBlinkState(), 400);
 }
 Cursor.prototype.updateBlinkState = function() {
   if (this.on) {
@@ -100,23 +95,18 @@ Cursor.prototype.updateBlinkState = function() {
 
 function TyperSetup() {
   var typers = {};
-  var elements = document.getElementsByClassName("typer");
-  for (var i = 0, e; e = elements[i++];) {
+  for (let e of document.getElementsByClassName("typer")) {
     typers[e.id] = new Typer(e);
   }
-  var elements = document.getElementsByClassName("typer-stop");
-  for (var i = 0, e; e = elements[i++];) {
+  for (let e of document.getElementsByClassName("typer-stop")) {
     let owner = typers[e.dataset.owner];
-    e.onclick = function(){owner.stop();};
+    e.onclick = () => owner.stop();
   }
-  var elements = document.getElementsByClassName("typer-start");
-  for (var i = 0, e; e = elements[i++];) {
+  for (let e of document.getElementsByClassName("typer-start")) {
     let owner = typers[e.dataset.owner];
-    e.onclick = function(){owner.start();};
+    e.onclick = () => owner.start();
   }
-
-  var elements2 = document.getElementsByClassName("cursor");
-  for (var i = 0, e; e = elements2[i++];) {
+  for (let e of document.getElementsByClassName("cursor")) {
     let t = new Cursor(e);
     t.owner = typers[e.dataset.owner];
     t.owner.cursor = t;
