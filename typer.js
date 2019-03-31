@@ -5,9 +5,10 @@ var Typer = function(element) {
   this.words = words.split(delim).filter(function(v){return v;}); // non empty words
   this.delay = element.dataset.delay || 200;
   this.loop = element.dataset.loop || "true";
+  if (this.loop === "false" ) { this.loop = 1 }
   this.deleteDelay = element.dataset.deletedelay || element.dataset.deleteDelay || 800;
 
-  this.progress = { word:0, char:0, building:true, atWordEnd:false, looped: 0 };
+  this.progress = { word:0, char:0, building:true, looped: 0 };
   this.typing = true;
 
   var colors = element.dataset.colors || "black";
@@ -33,7 +34,7 @@ Typer.prototype.doTyping = function() {
   var w = p.word;
   var c = p.char;
   var currentDisplay = [...this.words[w]].slice(0, c).join("");
-  p.atWordEnd = false;
+  var atWordEnd;
   if (this.cursor) {
     this.cursor.element.style.opacity = "1";
     this.cursor.on = true;
@@ -45,9 +46,9 @@ Typer.prototype.doTyping = function() {
   e.innerHTML = currentDisplay;
 
   if (p.building) {
-    if (p.char == [...this.words[w]].length) {
+    atWordEnd = p.char === this.words[w].length;
+    if (atWordEnd) {
       p.building = false;
-      p.atWordEnd = true;
     } else {
       p.char += 1;
     }
@@ -62,16 +63,18 @@ Typer.prototype.doTyping = function() {
     }
   }
 
-  if(p.atWordEnd) p.looped += 1;
+  if (p.word === this.words.length - 1) {
+    p.looped += 1;
+  }
 
-  if(!p.building && (this.loop == "false" || this.loop <= p.looped) ){
+  if (!p.building && this.loop <= p.looped){
     this.typing = false;
   }
 
   var myself = this;
   setTimeout(function() {
     if (myself.typing) { myself.doTyping(); };
-  }, p.atWordEnd ? this.deleteDelay : this.delay);
+  }, atWordEnd ? this.deleteDelay : this.delay);
 };
 
 var Cursor = function(element) {
