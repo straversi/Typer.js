@@ -1,0 +1,19 @@
+{
+  "name": "typer-dot-js",
+  "version": "0.1.0",
+  "description": "the typing effect with a pure HTML interface",
+  "main": "typer.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/straversi/Typer.js.git"
+  },
+  "author": "straversi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/straversi/Typer.js/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://steven.codes/typerjs/"
+}
