@@ -5,52 +5,60 @@
   <title>Typer.js</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    /** { position: absolute; }*/
+    html, body { margin:0; width:100%; }
+    .gradient-bg-1 { background-image:linear-gradient(200deg, rgb(74, 174, 179) 10%, rgb(42, 80, 167) 100%); background-repeat:no-repeat; background-size:cover; }
+    a { color:white; }
+    .darkened { background-color:rgba(21, 21, 23, 0.4); }
+    body { margin:0; width:100%; font-size:17px; }
+    p { font-family:'Source Sans Pro',sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family:'PT Sans',sans-serif; }
+    h2 { margin-top: 48px; }
+    .center-section { position:relative; max-width:900px; margin: 0 auto; padding:10px; width:100%; box-sizing: border-box;}
+    .center-section a { text-decoration: none; }
+    header { font-family:'PT Sans',sans-serif; text-align:left; vertical-align:middle;}
+    header ul { margin:0; padding:0; display:inline-block; }
+    header ul > li { display:inline; }
+    .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; padding:5px; height:17px; font-weight:bold; margin:0px 0px 0px 5px; vertical-align:middle; text-decoration:none; display:inline-block;}
+    .button:hover:active { border-bottom-width:0; margin-top:3px;}
+    .button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:17px;}
+    @media screen and (max-width:700px) { #git-link { display:none; }}
   </style>
 </head>
 <body>
-  <a href="index.html">Back</a>
+  <div class="gradient-bg-1">
+    <header class="center-section">
+      <a href="/typerjs/">
+        <span style="font-size:23px;font-weight:700;vertical-align:middle;">Typer.js</span>
+      </a>
+      <ul>
+        <li><a class="button" href="docs/index.html">Docs</a></li>
+        <li><a class="button" href="playground.html">Examples</a></li>
+        <li><a class="button" href="typer.js" target="_blank" download>Download</a></li>
+      </ul>
+      <a id="git-link" href="https://github.com/straversi/Typer.js"><img style="display:inline-block;float:right;height:26px;" src="assets/github.png" alt="github"></a>
+    </header>
+  </div>
 
-  <h3>Example</h3>
-  <p>
-    In a paragraph: <span class="typer" id="some-id" data-delay="100" data-delim=":" data-words="apples:and:oranges"
-    data-colors="red,black,orange"></span>
-    <span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span>
-  </p>
-  <button class="typer-stop" data-owner="some-id">Stop</button>
-  <button class="typer-start" data-owner="some-id">Start</button>
-  <h4>Script</h4>
-  <p>The following produced the above effect.</p>
-  <pre>
-    &lt;p&gt;
-      In a paragraph: &lt;span class="typer" id="some-id" data-delay="100" data-delim=":" data-words="apples:and:oranges"
-      data-colors="red,black,orange"&gt;&lt;/span&gt;
-      &lt;span class="cursor" data-cursorDisplay="_" data-owner="some-id"&gt;&lt;/span&gt;
-    &lt;/p&gt;
-    &lt;button class="typer-stop" data-owner="some-id"&gt;Stop&lt;/button&gt;
-    &lt;button class="typer-start" data-owner="some-id"&gt;Start&lt;/button&gt;
-  </pre>
+  <div class="center-section">
 
-  <h3>Example 2</h3>
-  <p>
-    <span class="typer" id="second-id" data-words="bears,beets,battlestar galactica"
-    data-colors="#266D98,#3CB29A,#422B72"></span>
-    <span style="font-size:1.2em;vertical-align:middle;" class="cursor" data-cursorDisplay="|" data-owner="second-id"></span>
-  </p>
-  <button class="typer-stop" data-owner="second-id">Stop</button>
-  <button class="typer-start" data-owner="second-id">Start</button>
-  <h4>Script</h4>
-  <p>The following produced the above effect.</p>
-  <pre>
-    &lt;p&gt;
-      &lt;span class="typer" id="second-id" data-words="bears,beets,battlestar galactica"
-      data-colors="#266D98,#3CB29A,#422B72"&gt;&lt;/span&gt;
-      &lt;span style="font-size:1.2em;vertical-align:middle;" class="cursor" data-cursorDisplay="|" data-owner="second-id"&gt;&lt;/span&gt;
-    &lt;/p&gt;
-    &lt;button class="typer-stop" data-owner="second-id"&gt;Stop&lt;/button&gt;
-    &lt;button class="typer-start" data-owner="second-id"&gt;Start&lt;/button&gt;
-  </pre>
+  <h2>Basic example</h2>
+    <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="straversi" data-slug-hash="yrLvmw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Typer.js Example 1">
+    <span>See the Pen <a href="https://codepen.io/straversi/pen/yrLvmw/">
+      Typer.js Example 1</a> by Steven Traversi (<a href="https://codepen.io/straversi">@straversi</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+  <h2>Using data-loop to stop on last word</h2>
+    <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="straversi" data-slug-hash="BEarGM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Typer.js Example 2">
+      <span>See the Pen <a href="https://codepen.io/straversi/pen/BEarGM/">
+      Typer.js Example 2</a> by Steven Traversi (<a href="https://codepen.io/straversi">@straversi</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+
+  </div>
 
   <script src="typer.js"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 </html>
