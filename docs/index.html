@@ -8,12 +8,18 @@
   <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    header { color:white; background-color:rgb(49, 149, 154); padding:10px; }
     body { font-size:17px; line-height:20px; margin:0; font-family:'Lato',Helvetica,Arial,sans-serif; color:#252525; }
     h1,h2,h3,h4,th { font-family:'PT Sans'; }
     h1 a { text-decoration:none; }
     a { color:inherit; }
-    .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; color:white; padding:5px; height:17px; font-weight:bold; margin:0px; vertical-align:top; text-decoration:none; display:inline-block;}
+    .gradient-bg-1 { background-image:linear-gradient(200deg, rgb(74, 174, 179) 10%, rgb(42, 80, 167) 100%); background-repeat:no-repeat; background-size:cover; }
+    .center-section { position:relative; max-width:900px; margin: 0 auto; padding:10px; width:100%; box-sizing: border-box;}
+    .center-section a { text-decoration: none; color: white;}
+    header { font-family:'PT Sans',sans-serif; text-align:left; vertical-align:middle;}
+    header ul { margin:0; padding:0; display:inline-block; }
+    header ul > li { display:inline; }
+    @media screen and (max-width:700px) { #git-link { display:none; }}
+    .button { background-color:rgb(207, 145, 17); border:none; border-bottom: 3px solid rgb(163, 111, 3); border-radius:3px; font-family:'PT Sans',sans-serif; font-size:14px; padding:5px; height:17px; font-weight:bold; margin:0px 0px 0px 5px; vertical-align:middle; text-decoration:none; display:inline-block;}
     .button:hover:active { border-bottom-width:0; margin-top:3px;}
     .button:hover { border-bottom-width:2px; margin-top:1px; cursor:pointer; height:17px;}
     .content { padding:10px; }
@@ -36,29 +42,35 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1><a href="../index.html">Typer.js</a></h1>
-    <h2>Documentation</h2>
-  </header>
-  <div class="content">
-  <a class="button" href="../typer.js" target="_blank" download>Get Typer.js</a>
-  <iframe src="https://ghbtns.com/github-btn.html?user=straversi&repo=Typer.js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-  <h3>Getting Started</h3>
+  <div class="gradient-bg-1">
+    <header class="center-section">
+      <a href="/typerjs/">
+        <span style="font-size:23px;font-weight:700;vertical-align:middle;">Typer.js</span>
+      </a>
+      <ul>
+        <li><a class="button" href="./index.html">Docs</a></li>
+        <li><a class="button" href="../playground.html">Examples</a></li>
+        <li><a class="button" href="https://unpkg.com/typer-dot-js@0.1.0/typer.js" target="_blank">Download</a></li>
+      </ul>
+      <a id="git-link" href="https://github.com/straversi/Typer.js"><img style="display:inline-block;float:right;height:30px;" src="../assets/github.png" alt="github"></a>
+    </header>
+  </div>
+  <div class="center-section">
+  <h1>Documentation</h1>
+  <h2>Getting Started</h2>
   <p>
     Getting ready to use Typer.js very simple; all of Typer.js is packaged in one
     short javascript file.<br>
-    Place the following at the end of your html file, right before the body
-    tag closes. Be sure to change the filepath in <code class="inset">src</code>
-    to reflect your case.
+    Place the following script right after your last usage of Typer.js in your HTML.
   </p>
-  <pre>&lt;script src='typer.js'&gt;&lt;/script&gt;</pre>
+  <pre>&lt;script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"&gt;&lt;/script&gt;</pre>
   <p>That's it. Here's an example typer to get you started:</p>
   <pre>&lt;p&gt;I enjoy &lt;span class="typer" data-delay="150" data-words="apples,oranges,blueberries" data-colors="red,orange,blue"&gt;&lt;/span&gt;&lt;/p&gt;</pre>
   <p>Add the following after your typer span to create a cursor. Make sure to add
   <code class="inset">id="first-typer"</code> to the typer as well, or else <thead>
     cursor won't know who to listen to.</p>
   <pre>&lt;span class="cursor" data-owner="first-typer"&gt;&lt;/span&gt;</pre>
-  <p>Note: If you'd like to load the Typer.js file somewhere else, or be extra sure that all of your DOM elements have loaded before attempting to hook them up, then you can move the <code>TyperSetup()</code> call at the end of Typer.js to wherever you'd like (suggestion: in a jQuery didLoad).</p>
+  <h2>API</h2>
   <h3>class <code>typer</code></h3>
   <p class="tabbed">Defines a DOM element as a target for the typing effect.</p>
   <table class="tabbed">
@@ -135,20 +147,24 @@
   </table>
   </div>
   <footer>
-    <ul>
-      <li><a href="../index.html">home</a></li>
-      <li><a href="">top</a></li>
-      <li><a href="../playground.html">example</a></li>
-    </ul>
-    <ul>
-      <li><a href="https://github.com/straversi">Steven Traversi</a></li>
-      <li>Bug? <a href="mailto:straversi@berkeley.edu">straversi@berkeley.edu</a></li>
-    </ul>
-  </footer>
-  <footer>
-    <h2 style="position:absolute;display:inline-block;top:19%;left:10px;">Typer.js</h3>
-    <a href="https://github.com/straversi/Typer.js"><img src="../assets/github.png" width="48" alt="github icon"></a>
-  </footer>
+    <div class="center-section">
+      <ul>
+        <li><a href="../index.html">home</a></li>
+        <li><a href="">top</a></li>
+        <li><a href="../playground.html">example</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://github.com/straversi">Steven Traversi</a></li>
+        <li><a href="https://github.com/straversi/Typer.js/issues">Bug? File it here</a></li>
+      </ul>
+    </footer>
+    <footer>
+      <div class="center-section">
+        <h2 style="position:absolute;display:inline-block;top:19%;left:10px;">Typer.js</h3>
+        <a href="https://github.com/straversi/Typer.js"><img src="../assets/github.png" width="32" alt="github icon"></a>
+      </div>
+    </footer>
+  </div>
 </body>
 <script>
   var h3s = document.getElementsByTagName("h3")
