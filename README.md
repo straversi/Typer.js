@@ -17,15 +17,15 @@ Live page: http://steven.codes/typerjs
 Never touch the JavaScript if you don't want to.
 
 ## Features
-- Change speed and delays
-- Configurable cursors
-- Colors
-- On/Off
 
-Explained in the [docs](http://steven.codes/typerjs/docs/)
+You're in control of:
+- Keystroke delay and variance
+- Time between deletion of words
+- Cursor display
+- Color of each word
+- Pausing and playing the effect
 
-## TODO
-- [ ] Add `human-like` option that varies character delays slightly
+Read more in the [docs](http://steven.codes/typerjs/docs/)
 
 ## Common bugs
 
